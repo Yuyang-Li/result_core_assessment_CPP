@@ -86,9 +86,13 @@ def Histograms():
 
 #regression analysis
 def RegressionAnalysis():
-    sns.lmplot('PRICE', 'SCORE', df1)
-    sns.lmplot('WEB_PRICE','SCORE',df1)
-    sns.lmplot('SCORE','PL',df1)
+    
+    print df1.corr()
+    
+    
+    sns.lmplot('SCORE','PRICE', df1)
+    sns.lmplot('SCORE','WEB_PRICE',df1)
+    sns.lmplot('PL','SCORE',df1)
 
 
     result1= sm.OLS(df1['SCORE'], df1['PL']).fit()

@@ -45,6 +45,7 @@ for line in reader:
         score_num = float(line[3])
         score.append(score_num)
 
+#take out the numbers
     detail_pl = line[4]
     mode_pl = re.compile(r'\d+')
     if mode_pl is not None:
@@ -84,6 +85,7 @@ for line in reader:
             price.append(None)
         else:
             data_price_num = float(datas_price[-1])
+#exclude the number in USD
             if m == '1':
                 data_price_num = data_price_num * rate
                 price.append(None)
